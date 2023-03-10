@@ -1,0 +1,211 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%Version for spanish users, by dgarhdez
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{LEIDY Y. MALDONADO MATIZ}
+\MySlogan{Ingeniera de Sistemas}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Datos personales}{}
+
+\PersonalEntry{Nacimiento}{17 de febrero, 1991}
+\PersonalEntry{Dirección}{Carrera 77 Q N 45 A sur  10}
+\PersonalEntry{Teléfono}{(+57) 310 8858601}
+\PersonalEntry{E--Mail}{\url{leidymm17@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Educación}{}
+
+\EducationEntry{Maestría en Analítica de Datos}{2022-Actual}{Universidad Central}
+
+\sepspace
+
+\EducationEntry{Especialización en Gerencia de Proyectos}{2017}{Universidad Minuto de Dios}
+
+\sepspace
+
+\EducationEntry{Ingenieria de Sistemas}{2013}{Universidad de Cundinamarca}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Experiencia laboral}{}
+
+\EducationEntry{Profesional Junior}{2019 - Actualidad}{Colpensiones}{
+\begin{itemize}
+\item{Participar en el proceso para resolver oportunamente las solicitudes presentadas por los ciudadanos para el reconocimiento de las prestaciones económicas de invalidez, vejez, muerte IVM, indemnización sustitutiva y auxilio funerario, previa verificación y cumplimiento de los requisitos establecidos en la normatividad vigente.}
+\item{Proyección de producción para informes a la corte constitucional a partir de las novedades en la planta de personal}
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Analista de Pruebas}{Sep- Dic 2018}{Choucair Testing S.A}
+{
+\begin{itemize}
+\item{Implementación y gestión de pruebas según solicitud del Cliente}
+\item{Diseño e implementación de pruebas según flujo del software.}
+\item{Recopilación y gestión de los datos de prueba en cada ciclo de pruebas}
+\end{itemize}
+}
+\sepspace
+
+\EducationEntry{Analista IV - BD}{2017 - 2018}{Misión Temporal para Colpensiones}
+{
+\begin{itemize}
+\item{Proyección de producción para informes a la corte constitucional a partir de las novedades en la planta de personal}
+\item{Desarrollos en visual Studio ( c#, visual Basic, asp.net) con motores de bases de datos (sql server) que sirve para la captura y visualización de información de la gerencia nacional de reconocimiento y otras áreas de Colpensiones como talento humano, defensa judicial, grupo de innovación, gerencia de planeación, entre otros}
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Profesional II Tecnología}{2016 - 2017}{Credivalores SA}
+{
+\begin{itemize}
+\item{Realizar la puesta en producción de nuevas aplicaciones y/o actualizaciones de las mismas. Esto incluye la planeación y coordinación del despliegue con los equipos de infraestructura, comunicaciones y bases de datos (Bizagi)}
+\item{Soporte y administrar la operación del proceso de operadores para que este se desarrolle con base en los procedimientos establecidos}
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Ingeniera de Soporte de Aplicativo}{2013 - 2016}{Constructora Colpatria}
+{
+\begin{itemize}
+\item{Realizar las modificaciones necesarias para correcta creación de los documentos contractuales comerciales y de obras que se generan automáticamente sobre Word desde la aplicación principal JDEdwards}
+\item{Administrar los módulos de Seguridades de JDEdwards Meta4 Exchange y Sharepoint}
+\item{Administrar el proceso de HelpDesk de tecnología realizando el control y seguimiento asignando casos y generando indicadores de servicio establecidos}
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Auxiliar de Sistemas}{2011 - 2013}{Opción Temporal y CIA SAS en misión a Siett Cundinamarca}
+{
+\begin{itemize}
+\item{Migración de información a RUNT}
+\item{Manejo de Docunet}
+\item{Manejo de base de datos (Access - Excel)}
+\end{itemize}
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Habilidades personales}{}
+
+\SkillsEntry{Idiomas}{Español (nativo)}
+
+\SkillsEntry{Software}{Excel, SQLServer, Bizagi Deployment}
+\SkillsEntry{}{Docunet JDEdwards, Sharepoint}
+
+\SkillsEntry{Habilidades Blandas}{Trabajo en equipo}
+\SkillsEntry{}{Flexibilidad y adaptación ante cambios}
+\SkillsEntry{}{Comunicación asertiva}
+\SkillsEntry{}{Análisis y resolución de problemas}
+\SkillsEntry{}{Servicio al cliente interno}
+\SkillsEntry{}{Empatía}
+%\SkillsEntry{}{}
+
+
+\end{document}
